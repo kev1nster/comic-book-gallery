@@ -8,7 +8,7 @@
         "Pencils: Humberto Ramos",
         "Inks: Victor Olazaba",
         "Colors: Edgar Delgado",
-        "Letters: Chris Eliopoulos"
+        "Letters: Chris Eliopoulos" 
     };
 }
 
@@ -25,9 +25,21 @@
         <h2>Issue #@issueNumber</h2>
         
         <h5>@Html.Raw(description)</h5>
+        @if (artists.Length > 0)
+        {
+            <h5>Artits:</h5>
+            <div>
+                <ul>
+                    @foreach (var artist in artists)
+                {
+                        <li>
+                            <text>@artist</text>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
         
-        <h5>Artits:</h5>
-        <div>@artists</div>
     </div>
 </body>
 </html>
